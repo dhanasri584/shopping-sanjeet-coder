@@ -1,32 +1,63 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
+int main()
+{
+    float shopping(void);
+    int result=0;
+    result=shopping();
+    cout<<"hence ur total is"<<result; 
+    
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
+float shopping(){
+    char option;
+    char enter;
+    int total;
+    char choice;
+    do{
+    m:
+    cout<<"pls input s to start"<<endl;
+    cin>>enter;
+    if(enter=='s'){
+    cout<<"welcome to store pls enter what u want a)mobile b)laptops"<<endl;
+    cin>>option;
+    if(option=='a'){
+        cout<<"enter a for oppo price 25000"<<endl;
+        cout<<"enter b for redmi price 30000"<<endl;
+        cin>>option;
+        if(option=='a'){
+            total+=25000;
+        }
+        else if(option=='b'){
+            total+=30000;
+        }
+        else{
+            cout<<"u have entered wrong input pls enter correct one";
+        }
+    }
+    else if(option=='b'){
+        cout<<"enter a for lenovo price 50000"<<endl;
+        cout<<"enter b for hp price 60000"<<endl;
+        cin>>option;
+        if(option=='a'){
+            total+=50000;
+        }
+        else if(option=='b'){
+            total+=60000;
+        }
+        else{
+            cout<<"u have entered wrong input pls enter correct one";
+        }
+    }
+    else{
+        cout<<"u have entered wrong input enter s";
+        goto m;
+    }
+    }
+    cout<<"do u want to shop more??y/n";
+    cin>>choice;
+    }while(choice=='y');
+    return total;
+    
+}
